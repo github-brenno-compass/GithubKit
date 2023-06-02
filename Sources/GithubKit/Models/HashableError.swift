@@ -7,10 +7,13 @@
 
 import Foundation
 
+/// The `HashableError` transforms any `Error` into a `Hashable`.
 public struct HashableError<Failure: Error> {
 
+    /// The encapsulated error.
     public let error: Failure
 
+    /// Initializes the `HashableError` with an error.
     public init(_ error: Failure) {
         self.error = error
     }
