@@ -7,12 +7,14 @@
 
 import Foundation
 
+/// `AuthenticationAppAction` represents an action related to authentication in the app.
 public enum AuthenticationAppAction: Hashable {
     case error(Failure)
 }
 
 extension AuthenticationAppAction {
 
+    /// `Failure` represents a failure action that occurred in any part of the app.
     public struct Failure: Hashable {
 
         public let error: HashableError<Error>
