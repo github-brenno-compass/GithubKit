@@ -1,0 +1,15 @@
+name: Generate Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  call-generate-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    uses: github-brenno-compass/.github/.github/workflows/generate-release.yml@main
+    secrets: inherit

@@ -1,0 +1,16 @@
+name: Auto Assign
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+
+jobs:
+  call-auto-assign:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    uses: github-brenno-compass/.github/.github/workflows/auto-assign.yml@main
+    secrets: inherit
