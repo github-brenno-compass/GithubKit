@@ -9,5 +9,4 @@ on:
 
 jobs:
   call-swiftlint:
-    runs-on: macOS-latest
     uses: github-brenno-compass/.github/.github/workflows/swiftlint.yml@main

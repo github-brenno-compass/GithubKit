@@ -7,7 +7,6 @@ on:
 
 jobs:
   call-generate-release:
-    runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
