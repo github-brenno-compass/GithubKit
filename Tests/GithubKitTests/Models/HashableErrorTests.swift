@@ -11,10 +11,13 @@ import XCTest
 final class HashableErrorTests: XCTestCase {
 
     struct ErrorMock: LocalizedError {
+
+        // swiftlint:disable nesting
         enum Context {
             case contextLocked
             case contextBusy
         }
+        // swiftlint:enable nesting
 
         let context: Context
 

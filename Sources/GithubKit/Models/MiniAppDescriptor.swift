@@ -57,7 +57,7 @@ import SwiftUI
     }
  }
  ```
- 
+
  - Note: The complete implementation also involves the `GithubKit/MiniAppActions` and
  `GithubKit/MiniAppResolver`.
  */

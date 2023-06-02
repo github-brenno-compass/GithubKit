@@ -8,38 +8,46 @@
 import Foundation
 
 /**
- `AuthenticationAppScene` describes all the available scenes for transition that are implemented within the `AuthenticationApp`.
+ `AuthenticationAppScene` describes all the available scenes for transition that are implemented within
+ the `AuthenticationApp`.
 
-Some developed features may aim to make a flow available in the application that is independent of any other predefined rules. A very common example in applications where security is crucial is to have an independent flow implemented by a mini-app that validates the user's biometrics to ensure that it is not a fraudster using the user's account.
+ Some developed features may aim to make a flow available in the application that is independent of any other
+ predefined rules. A very common example in applications where security is crucial is to have an independent
+ flow implemented by a mini-app that validates the user's biometrics to ensure that it is not a fraudster using the
+ user's account.
 
-With the `NavigationKit`, it is possible to activate a scene through `NavigationAction` or `ViewResolver`, hence the importance of checking the type of each scene through the documentation.
+ With the `NavigationKit`, it is possible to activate a scene through `NavigationAction` or
+ `ViewResolver`, hence the importance of checking the type of each scene through the documentation.
 
-- Warning: It is important to check the documentation of the case to be used in order to not break the application flow.
+ - Warning: It is important to check the documentation of the case to be used in order to not break the
+ application flow.
 
-Example:
+ Example:
 
-```swift
-struct CustomView: View {
+ ```swift
+ struct CustomView: View {
 
-   @Environment(\.navigationAction) var navigationAction
+    @Environment(\.navigationAction) var navigationAction
 
-   var body: some View {
-       Button("Push") {
-           // This will open the login screen for the user to authenticate.
-           navigationAction(AuthenticationAppScene.login(.init()))
-       }
-   }
-}
-```
+    var body: some View {
+        Button("Push") {
+            // This will open the login screen for the user to authenticate.
+            navigationAction(AuthenticationAppScene.login(.init()))
+        }
+    }
+ }
+ ```
 
-- Note: An interesting point is the use of the `Closure` type implemented in `NavigationKit`, which allows the safe use of closures from SwiftUI's update rules to obtain the result of a flow.
+ - Note: An interesting point is the use of the `Closure` type implemented in `NavigationKit`, which
+ allows the safe use of closures from SwiftUI's update rules to obtain the result of a flow.
 */
 public enum AuthenticationAppScene {
 
     /**
      Used to open the login flow.
 
-     - Warning: It should be used through `viewResolver` as the main screen, as the navigation is internal.
+     - Warning: It should be used through `viewResolver` as the main screen, as the navigation is
+     internal.
      */
     case login(Login)
 }

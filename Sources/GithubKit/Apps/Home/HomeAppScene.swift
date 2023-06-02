@@ -8,14 +8,18 @@
 import Foundation
 
 /**
- `AuthenticationAppScene` describes all the available scenes for transition that are implemented within the `AuthenticationApp`.
+ `AuthenticationAppScene` describes all the available scenes for transition that are implemented within
+ the `AuthenticationApp`.
 
-With the `NavigationKit`, it is possible to activate a scene through `NavigationAction` or `ViewResolver`, hence the importance of checking the type of each scene through the documentation.
+ With the `NavigationKit`, it is possible to activate a scene through `NavigationAction` or
+ `ViewResolver`, hence the importance of checking the type of each scene through the documentation.
 
- - Warning: It is important to check the documentation of the case to be used in order to not break the application flow.
+ - Warning: It is important to check the documentation of the case to be used in order to not break the
+ application flow.
 
- - Note: For a better understanding of `AppAction` concept, please refer to the documentation in the ``GithubKit/AuthenticationAppAction`` object.
-*/
+ - Note: For a better understanding of `AppAction` concept, please refer to the documentation in the
+ ``GithubKit/AuthenticationAppAction`` object.
+ */
 public enum HomeAppScene {
 
     /**

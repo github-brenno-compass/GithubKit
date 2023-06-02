@@ -15,6 +15,7 @@ import Foundation
 
  - Warning: Currently there's no action available to communicate with `HomeApp`.
 
- - Note: For a better understanding of `AppAction` concept, please refer to the documentation in the ``GithubKit/AuthenticationAppAction`` object.
+ - Note: For a better understanding of `AppAction` concept, please refer to the documentation in the
+ ``GithubKit/AuthenticationAppAction`` object.
  */
 public enum HomeAppAction {}
