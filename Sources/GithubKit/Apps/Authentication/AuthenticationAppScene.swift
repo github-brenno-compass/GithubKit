@@ -1,6 +1,6 @@
 //
 //  AuthenticationAppScene.swift
-//  
+//
 //
 //  Created by Brenno on 02/06/23.
 //
