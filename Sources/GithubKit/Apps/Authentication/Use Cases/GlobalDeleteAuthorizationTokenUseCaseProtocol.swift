@@ -9,7 +9,7 @@ import Foundation
 import Factory
 
 /// The protocol defines a UseCase to delete the access token of the authenticated user.
-public protocol DeleteAuthorizationTokenUseCaseProtocol {
+public protocol GlobalDeleteAuthorizationTokenUseCaseProtocol {
 
     /// Method to delete the access token.
     ///
@@ -25,7 +25,7 @@ extension Container {
      - Warning: If the dependency has not been registered, obtaining the use case will generate a fatal
      error.
      */
-    public var deleteAuthorizationTokenUseCase: Factory<DeleteAuthorizationTokenUseCaseProtocol> {
+    public var globalDeleteAuthorizationTokenUseCase: Factory<GlobalDeleteAuthorizationTokenUseCaseProtocol> {
         self { fatalError() }
     }
 }

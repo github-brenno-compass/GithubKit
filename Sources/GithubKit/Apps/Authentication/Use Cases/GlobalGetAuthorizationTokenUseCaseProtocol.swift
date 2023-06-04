@@ -9,7 +9,7 @@ import Foundation
 import Factory
 
 /// The protocol defines a UseCase for obtaining the access token of the authenticated user.
-public protocol GetAuthorizationTokenUseCaseProtocol {
+public protocol GlobalGetAuthorizationTokenUseCaseProtocol {
 
     /// Method to obtain the authorization token.
     ///
@@ -25,7 +25,7 @@ extension Container {
      - Warning: If the dependency has not been registered, obtaining the use case will generate a fatal
      error.
      */
-    public var getAuthenticationTokenUseCase: Factory<GetAuthorizationTokenUseCaseProtocol> {
+    public var globalGetAuthorizationTokenUseCase: Factory<GlobalGetAuthorizationTokenUseCaseProtocol> {
         self { fatalError() }
     }
 }
