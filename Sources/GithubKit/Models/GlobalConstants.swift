@@ -11,8 +11,11 @@ import Factory
 /// This protocol defines the global constant to be use across the app.
 public protocol GlobalConstants {
 
-    /// The API token (Github Services)
-    var apiToken: String { get }
+    /// The Client API token (Github.com Services)
+    var clientAPIToken: String { get }
+
+    /// The Client Secret (Github.com Services)
+    var clientSecret: String { get }
 }
 
 extension Container {
