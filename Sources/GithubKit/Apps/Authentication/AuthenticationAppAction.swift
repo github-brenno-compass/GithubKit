@@ -80,11 +80,17 @@ extension AuthenticationAppAction {
 extension AuthenticationAppAction {
 
     /// This enables the app to switch to logout state.
-    public struct Logout: Hashable {}
+    public struct Logout: Hashable {
+
+        public init() {}
+    }
 }
 
 extension AuthenticationAppAction {
 
     /// This enables the app to switch to authenticated state.
-    public struct Authenticated: Hashable {}
+    public struct Authenticated: Hashable {
+
+        public init() {}
+    }
 }
