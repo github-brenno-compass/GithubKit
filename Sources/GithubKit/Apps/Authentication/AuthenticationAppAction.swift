@@ -42,6 +42,12 @@ public enum AuthenticationAppAction: Hashable {
 
     /// Generates an error action with the `Failure` model.
     case error(Failure)
+
+    /// Informs that user logout
+    case logout(Logout)
+
+    /// Informs that user is authenticated
+    case authenticated(Authenticated)
 }
 
 extension AuthenticationAppAction {
@@ -69,4 +75,16 @@ extension AuthenticationAppAction {
             self.anchor = anchor
         }
     }
+}
+
+extension AuthenticationAppAction {
+
+    /// This enables the app to switch to logout state.
+    public struct Logout: Hashable {}
+}
+
+extension AuthenticationAppAction {
+
+    /// This enables the app to switch to authenticated state.
+    public struct Authenticated: Hashable {}
 }
