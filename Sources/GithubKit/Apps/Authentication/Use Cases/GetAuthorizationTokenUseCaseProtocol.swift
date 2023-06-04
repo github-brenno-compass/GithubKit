@@ -1,5 +1,5 @@
 //
-//  GetAuthorizationTokenUseCase.swift
+//  GetAuthorizationTokenUseCaseProtocol.swift
 //
 //
 //  Created by Brenno on 03/06/23.
@@ -14,7 +14,7 @@ public protocol GetAuthorizationTokenUseCaseProtocol {
     /// Method to obtain the authorization token.
     ///
     /// - Throws: If there is no registered token.
-    func callAsFunction() async throws -> String
+    func callAsFunction() throws -> String
 }
 
 extension Container {
@@ -25,7 +25,7 @@ extension Container {
      - Warning: If the dependency has not been registered, obtaining the use case will generate a fatal
      error.
      */
-    public var getAuthenticationTokenUseCase: Factory<GetAPITokenUseCaseProtocol> {
+    public var getAuthenticationTokenUseCase: Factory<GetAuthorizationTokenUseCaseProtocol> {
         self { fatalError() }
     }
 }
