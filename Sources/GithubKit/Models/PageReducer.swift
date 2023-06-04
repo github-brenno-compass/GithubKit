@@ -66,6 +66,10 @@ public struct PageReducer<Element: Identifiable>: ReducerProtocol {
             hasher.combine(offset)
             hasher.combine(canLoadMorePages)
         }
+
+        func restrictedLimit(_ limit: Int) -> Int {
+            Int(ceil(CGFloat(limit) / CGFloat(self.limit))) * self.limit
+        }
     }
 
     /// Defines the actions of the `PageReducer`.
@@ -110,12 +114,14 @@ public struct PageReducer<Element: Identifiable>: ReducerProtocol {
                 if case .success(let items) = result {
                     state.items = items
                 }
+                state.offset = .zero
                 state.isLoading = false
                 state.isReloading = false
             case .append(let result):
                 if case .success(let items) = result {
                     state.items.append(contentsOf: items)
                 }
+                state.offset += 1
                 state.isLoading = false
             case .barrierLoadData:
                 break
@@ -150,7 +156,7 @@ private extension PageReducer {
 
         return .send(.barrierLoadData(.init(
             offset: .zero,
-            limit: state.items.isEmpty ? state.limit : state.items.count
+            limit: state.restrictedLimit(state.items.isEmpty ? state.limit : state.items.count)
         )))
     }
 }
