@@ -1,6 +1,6 @@
 //
 //  RefreshAuthorizationTokenUseCaseProtocol.swift
-//  
+//
 //
 //  Created by Brenno on 04/06/23.
 //

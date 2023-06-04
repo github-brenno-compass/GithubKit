@@ -1,6 +1,6 @@
 //
 //  CheckAuthorizationTokenRefreshUseCaseProtocol.swift
-//  
+//
 //
 //  Created by Brenno on 04/06/23.
 //
@@ -8,6 +8,7 @@
 import Foundation
 import Factory
 
+// swiftlint:disable type_name
 /// The protocol defines a UseCase to verify the need of authorization token refresh.
 public protocol CheckAuthorizationTokenRefreshUseCaseProtocol {
 
@@ -32,3 +33,4 @@ extension Container {
         self { fatalError() }
     }
 }
+// swiftlint:enable type_name
