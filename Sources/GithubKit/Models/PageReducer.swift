@@ -113,15 +113,15 @@ public struct PageReducer<Element: Identifiable>: ReducerProtocol {
             case .reset(let result):
                 if case .success(let items) = result {
                     state.items = items
+                    state.offset = items.count
                 }
-                state.offset = .zero
                 state.isLoading = false
                 state.isReloading = false
             case .append(let result):
                 if case .success(let items) = result {
                     state.items.append(contentsOf: items)
+                    state.offset += items.count
                 }
-                state.offset += 1
                 state.isLoading = false
             case .barrierLoadData:
                 break
