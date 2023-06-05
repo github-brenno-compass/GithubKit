@@ -45,7 +45,7 @@ import SwiftUI
 
     func body(content: Content) -> some View {
         content
-            .navigationDestination(for: MoviesFeatureScene.Login.self) {
+            .nkNavigationDestination(for: MoviesFeatureScene.Login.self) {
                 LoginCoordinator($0)
             }
             .navigationDestinationTransformer(for: LoginFeatureScene.self) {
